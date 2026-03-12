@@ -4,7 +4,7 @@ export const experiences: Experience[] = [
   {
     id: 1,
     company: 'Central Bank of Indonesia',
-    position: 'Program Project Management',
+    position: 'Creative Project Management',
     period: 'October 2025 - Present',
     description:
       'Supporting consumer protection initiatives through creative production, campaign support, and event management.',
@@ -472,7 +472,7 @@ export const placeholderImages = {
     'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=500&fit=crop'
   ],
 
-   contact: {
+  contact: {
     portrait1: 'https://res.cloudinary.com/doirxg4kz/image/upload/v1767944105/vacgqbas5qhcbzkruuvn.webp',
     portrait2: 'https://res.cloudinary.com/doirxg4kz/image/upload/v1767944120/sjyqod0avxciykxtax4r.webp'
   }

@@ -1,31 +1,11 @@
-import React, { useState } from 'react';
-import { Calendar, User, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, User, Tag, ChevronLeft, ChevronRight, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/common/Footer';
-
-// Core viewer
-import { Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
-
-// Plugins for better viewing experience
-import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
-
-// Configure PDF.js worker
-import { GlobalWorkerOptions } from 'pdfjs-dist';
-GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.js',
-  import.meta.url
-).toString();
-
-// Import styles
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 const CommunicationDetailPage = () => {
   const navigate = useNavigate();
   const [currentPdfIndex, setCurrentPdfIndex] = useState(0);
-
-  // Initialize default layout plugin
-  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   // List of PDF files
   const pdfFiles = [
@@ -42,8 +22,7 @@ const CommunicationDetailPage = () => {
     { name: 'Miscellaneous Publicity', path: '/pdf/Micellaneous Publicity.pdf' },
     { name: 'Press Conference', path: '/pdf/Press Conference.pdf' },
     { name: 'Connected Campaign Deck', path: '/pdf/Connected to be Distracted - Campaign Deck.pdf' },
-    { name: 'Senyum Manis Campaign Deck', path: '/pdf/Senyum Manis dibalik Haus - Campaign Deck.pdf' },
-    { name: 'CV', path: '/pdf/CV.pdf' }
+    { name: 'Senyum Manis Campaign Deck', path: '/pdf/Senyum Manis dibalik Haus - Campaign Deck.pdf' }
   ];
 
   const handleBackToProjects = () => {
@@ -110,14 +89,25 @@ const CommunicationDetailPage = () => {
                 <ChevronRight size={20} />
               </button>
             </div>
+
+            {/* Download link */}
+            <a
+              href={pdfFiles[currentPdfIndex].path}
+              download
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-100 transition-colors text-sm font-medium"
+            >
+              <Download size={16} />
+              Download PDF
+            </a>
           </div>
 
-          {/* PDF Display - Responsive container */}
+          {/* PDF Display - Browser native embed */}
           <div className="bg-white rounded-xl shadow-md overflow-hidden" style={{ height: '60vh', minHeight: '400px', maxHeight: '800px' }}>
-            <Viewer
-              fileUrl={pdfFiles[currentPdfIndex].path}
-              plugins={[defaultLayoutPluginInstance]}
-              defaultScale={SpecialZoomLevel.PageWidth}
+            <iframe
+              key={pdfFiles[currentPdfIndex].path}
+              src={pdfFiles[currentPdfIndex].path}
+              title={pdfFiles[currentPdfIndex].name}
+              className="w-full h-full border-0"
             />
           </div>
         </div>
