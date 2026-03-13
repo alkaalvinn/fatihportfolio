@@ -60,7 +60,7 @@ const Hero = () => {
                   fontSize: 'clamp(1rem, 4vw, 1.25rem)'
                 }}
               >
-                I craft meaningful stories through visual and communications.
+                I Turn Brand Strategies Into Campaigns That Deliver Results
               </h2>
 
               <p
@@ -69,7 +69,7 @@ const Hero = () => {
                   fontSize: 'clamp(0.75rem, 3vw, 1rem)'
                 }}
               >
-                Transforming complex ideas into clear, compelling narratives.
+                Experienced across FMCG, Banking, Aviation & F&B — bridging communication strategy with compelling visual and digital execution.
               </p>
             </div>
 
@@ -157,7 +157,7 @@ const Hero = () => {
                   fontSize: '1.25rem'
                 }}
               >
-                I craft meaningful stories through design and communication
+                I Turn Brand Strategies Into Campaigns That Deliver Results
               </h2>
 
               <p
@@ -166,7 +166,7 @@ const Hero = () => {
                   fontSize: '1rem'
                 }}
               >
-                Transforming complex ideas into clear, compelling narratives.
+                Experienced across FMCG, Banking, Aviation & F&B — bridging communication strategy with compelling visual and digital execution.
               </p>
 
               {/* CTA Buttons */}
