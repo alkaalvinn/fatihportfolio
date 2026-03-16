@@ -179,7 +179,7 @@ const Hero = () => {
                   <span className="inline-block ml-2">→</span>
                 </button>
                 <a
-                  href="/CV_Muhammad Fatih Abrar.pdf"
+                  href="/CV.pdf"
                   download
                   className="px-6 py-3 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-800 hover:text-white transition-all duration-200 font-medium text-sm inline-flex items-center gap-2"
                 >
